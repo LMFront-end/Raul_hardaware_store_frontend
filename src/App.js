@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import './App.css';
+import "./style/dark.scss";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from './context/AuthContext';
 

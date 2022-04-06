@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
 .sidebar {
   flex: 1;
   border-right: 0.5px solid rgb(230, 227, 227);
@@ -14,6 +16,7 @@
       font-size: 20px;
       font-weight: bold;
       color: #6439ff;
+      font-family: 'Open Sans', sans-serif;
     }
   }
 
@@ -36,6 +39,7 @@
         color: #999;
         margin-top: 15px;
         margin-bottom: 5px;
+        font-family: 'Open Sans', sans-serif;
       }
 
       li {
@@ -58,6 +62,7 @@
             font-weight: 600;
             color: #888;
             margin-left: 10px;
+            font-family: 'Open Sans', sans-serif;
         }
       }
     }
