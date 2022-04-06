@@ -6,6 +6,7 @@ import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlin
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
 
@@ -39,6 +40,10 @@ const Navbar = () => {
           </div>
           <div className="item">
             <ChatBubbleOutlineOutlinedIcon className="icon" />
+            <div className="counter">2</div>
+          </div>
+          <div className="item">
+            <LocalGroceryStoreIcon className="icon" />
             <div className="counter">2</div>
           </div>
           <div className="item">
