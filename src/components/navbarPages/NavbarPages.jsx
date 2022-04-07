@@ -1,23 +1,19 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-import logo from '../../assets/darkTheme.png'
 
 const NavbarPages = () => {
   return (
     <>
-        <nav className="navbar navbar-light bg-light">
-            <div className="container-fluid">
-            <a className="navbar-brand" href="#">
-            <Link className="navbar-brand fw-bold fs-4" to={"/"}>
-                <h1>Raul's HardwareStore</h1>
-            </Link>
-
-            </a>
-            </div>
-        </nav>
+      <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+        <div className="container">
+          <Link className="navbar-brand fw-bold fs-4" to="/">
+            Raul's Hardware Store
+          </Link>
+        </div>
+      </nav>
     </>
-  )
-}
+  );
+};
 
-export {NavbarPages}
+export { NavbarPages };

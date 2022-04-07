@@ -24,12 +24,12 @@
 
 .navbar-brand {
     font-family: 'Hurricane', cursive;
-    font-size: 20px;
-    color: var(--bd-color-logo) !important;
+    font-size: 28px;
+    color: yellow;
 }
 
-.navbar-nav h1 {
-    font-size: 18px;
+.navbar-nav a {
+    font-size: 25px;
     font-family: 'Montserrat', sans-serif;
     color: var(--bd-color-font);
     font-weight: 800;
