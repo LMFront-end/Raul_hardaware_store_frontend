@@ -17,6 +17,7 @@ const Login = () => {
   const {dispatch} = useContext(AuthContext)
 
   const handleLogin = e => {
+    
     e.preventDefault();
 
     createUserWithEmailAndPassword(auth, email, password)

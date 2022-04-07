@@ -15,7 +15,7 @@ const App = () => {
 
   const { darkMode } = useContext(DarkModeContext);
   const {currentUser} = useContext(AuthContext)
-  const a = "a"
+  console.log(currentUser)
 
   const RequiredAuth = ({children}) => {
     return currentUser ? (children) : <Navigate to="/login"/>
