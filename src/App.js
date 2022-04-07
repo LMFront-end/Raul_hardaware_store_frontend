@@ -9,6 +9,7 @@ import { AuthContext } from './context/AuthContext';
 import { Home } from "./pages/home/Home";
 import { Login } from "./pages/login/Login"
 import { Customers } from './pages/customer/Customers'
+import HardwareStore from "./pages/hardwareStore/HardwareStore";
 
 
 const App = () => {
@@ -44,6 +45,17 @@ const App = () => {
                 }
               />
             </Route>
+
+            <Route path="harwareStore">
+              <Route index
+                element={
+                  <RequiredAuth>
+                    <HardwareStore />
+                  </RequiredAuth>
+                }
+              />
+            </Route>
+
           </Route>
         </Routes>
       </BrowserRouter>

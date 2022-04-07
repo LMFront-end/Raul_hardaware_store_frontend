@@ -1,4 +1,5 @@
 import React from 'react'
+import { Footer } from '../../components/Footer/Footer'
 
 const HardwareStore = () => {
   return (
@@ -18,6 +19,7 @@ const HardwareStore = () => {
                 </div>
             </div>
         </div>
+        <Footer />
         </div>
     </>
   )
