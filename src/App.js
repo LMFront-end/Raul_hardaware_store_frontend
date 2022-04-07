@@ -11,8 +11,6 @@ import { Login } from "./pages/login/Login"
 import { Customers } from './pages/customer/Customers'
 
 
-
-
 const App = () => {
 
   const { darkMode } = useContext(DarkModeContext);

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import MaterialTable from 'material-table'
 
 const CustomerTable = () => {
   return (
@@ -6,4 +7,4 @@ const CustomerTable = () => {
   )
 }
 
-export default CustomerTable
+export {CustomerTable}
