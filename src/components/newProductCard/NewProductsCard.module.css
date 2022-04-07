@@ -13,11 +13,11 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     width: 90px;
-    height: 600px;
+    height: 700px;
 }
 
 .hotelCard__img {
-    max-width: 50%;
+    max-width: 80%;
     align-self: center;
     border-radius: 15px;
     padding: 10px;
@@ -38,7 +38,7 @@
 
 .hotelCard__description {
     padding: 0 15px;
-    text-align: center;
+    text-align: justify;
     font-family: "Libre Franklin", sans-serif;
     font-size: 14px;
     color: #3f3f3f;

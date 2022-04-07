@@ -2,7 +2,8 @@
 
 .title_contact {
     text-align: center;
-    color: #ffff;
+    color: rgba(51, 51, 51, 0.973);
+    text-decoration: underline;
 }
 
 .hotelList {

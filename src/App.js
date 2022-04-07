@@ -11,6 +11,7 @@ import { Login } from "./pages/login/Login"
 import {HardwareStore} from "./pages/hardwareStore/HardwareStore";
 import { Customers } from './pages/customer/Customers'
 import { NewProducts } from "./pages/newProducts/NewProducts";
+import { Map } from "./pages/Map/Map";
 
 
 
@@ -68,6 +69,15 @@ const App = () => {
               />
             </Route>
 
+            <Route path="map">
+            <Route index
+                element={
+                  <RequiredAuth>
+                    <Map />
+                  </RequiredAuth>
+                }
+              />
+            </Route>
             
 
           </Route>
