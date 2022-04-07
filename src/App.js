@@ -8,6 +8,7 @@ import { AuthContext } from './context/AuthContext';
 // pages
 import { Home } from "./pages/home/Home";
 import { Login } from "./pages/login/Login"
+import { Customers } from './pages/customer/Customers'
 
 
 
@@ -34,6 +35,16 @@ const App = () => {
               <RequiredAuth>
                 <Home />
               </RequiredAuth>} />
+
+              <Route path="customers">
+              <Route index
+                element={
+                  <RequiredAuth>
+                    <Customers />
+                  </RequiredAuth>
+                }
+              />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
