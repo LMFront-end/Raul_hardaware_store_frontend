@@ -76,7 +76,7 @@ const Sidebar = () => {
 
 
           <p className="title">LOCATION</p>
-          <Link to="/bill" style={{ textDecoration: "none" }}>
+          <Link to="/map" style={{ textDecoration: "none" }}>
             <li>
               <LocationOnIcon className="icon" />
               <span>Map</span>
