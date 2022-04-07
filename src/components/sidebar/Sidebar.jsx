@@ -4,7 +4,6 @@ import StoreIcon from "@mui/icons-material/Store";
 import InsertChartIcon from "@mui/icons-material/InsertChart";
 import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
@@ -12,6 +11,7 @@ import InventoryIcon from '@mui/icons-material/Inventory';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import DescriptionIcon from '@mui/icons-material/Description';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
@@ -28,6 +28,14 @@ const Sidebar = () => {
       <hr />
       <div className="center">
         <ul>
+        <p className="title">PRESENTATION</p>
+
+        <Link to="/harwareStore" style={{ textDecoration: "none" }}>
+            <li>
+              <MapsHomeWorkIcon className="icon" />
+              <span>Hardware Store</span>
+            </li>
+          </Link>
           <p className="title">LISTS</p>
 
           <Link to="/customers" style={{ textDecoration: "none" }}>
@@ -40,7 +48,7 @@ const Sidebar = () => {
           <Link to="/products" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
-              <span>Products</span>
+              <span>New Products</span>
             </li>
           </Link>
 
