@@ -1,8 +1,37 @@
-import React from 'react'
+import React from 'react';
+import styles from './NewProductsCard.module.css'
 
-const NewProductsCard = () => {
+const NewProductsCard = (props) => {
   return (
-    <div>NewProductsCard</div>
+    <>
+    <div className={styles.hotelCard} key={props.slug}>
+          <img
+            src={props.img}
+            alt={props.name}
+            className={styles.hotelCard__img}
+          />
+          <h3 className={styles.hotelCard__name}>{props.name}</h3>
+          <p className={styles.hotelCard__description}>{props.description}</p>
+
+          </div>
+
+          <div className={styles.hotelCard__info}>
+            <div className={styles.hotelCard__info__room}>
+              
+              <span className={styles.hotelCard__info__room__text}>
+              reference: {props.reference} 
+              </span>
+            </div>
+
+            <div className={styles.hotelCard__info__price}>
+              <span className={styles.hotelCard__info__price__text}>
+                price: {props.price}
+              </span>
+            </div>
+          </div>
+
+          <button className={styles.hotelCard__btn}>Messenger</button>
+    </>
   )
 }
 
