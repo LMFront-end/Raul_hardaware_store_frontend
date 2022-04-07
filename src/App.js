@@ -8,8 +8,10 @@ import { AuthContext } from './context/AuthContext';
 // pages
 import { Home } from "./pages/home/Home";
 import { Login } from "./pages/login/Login"
+import {HardwareStore} from "./pages/hardwareStore/HardwareStore";
 import { Customers } from './pages/customer/Customers'
-import HardwareStore from "./pages/hardwareStore/HardwareStore";
+import { NewProducts } from "./pages/newProducts/NewProducts";
+
 
 
 const App = () => {
@@ -36,17 +38,7 @@ const App = () => {
                 <Home />
               </RequiredAuth>} />
 
-              <Route path="customers">
-              <Route index
-                element={
-                  <RequiredAuth>
-                    <Customers />
-                  </RequiredAuth>
-                }
-              />
-            </Route>
-
-            <Route path="harwareStore">
+              <Route path="harwareStore">
               <Route index
                 element={
                   <RequiredAuth>
@@ -55,6 +47,28 @@ const App = () => {
                 }
               />
             </Route>
+
+            <Route path="customers">
+            <Route index
+                element={
+                  <RequiredAuth>
+                    <Customers />
+                  </RequiredAuth>
+                }
+              />
+            </Route>
+
+            <Route path="products">
+            <Route index
+                element={
+                  <RequiredAuth>
+                    <NewProducts />
+                  </RequiredAuth>
+                }
+              />
+            </Route>
+
+            
 
           </Route>
         </Routes>

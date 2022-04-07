@@ -30,4 +30,4 @@ const HardwareStore = () => {
   )
 }
 
-export default HardwareStore
+export {HardwareStore}
