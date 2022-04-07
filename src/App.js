@@ -10,6 +10,8 @@ import { Home } from "./pages/home/Home";
 import { Login } from "./pages/login/Login"
 
 
+
+
 const App = () => {
 
   const { darkMode } = useContext(DarkModeContext);
@@ -31,9 +33,7 @@ const App = () => {
             <Route index element={
               <RequiredAuth>
                 <Home />
-              </RequiredAuth>
-            } />
-
+              </RequiredAuth>} />
           </Route>
         </Routes>
       </BrowserRouter>
