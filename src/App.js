@@ -17,6 +17,7 @@ import {BillContext} from "./context/bill/BillContext";
 import {URL_API} from "./utils/data";
 import {GenerateBill} from "./pages/generateBill/GenerateBill";
 import {Supplier} from "./pages/supplier/Supplier";
+import {ListProducts} from "./pages/listProducts/ListProducts";
 
 
 
@@ -109,6 +110,17 @@ const App = () => {
                 <RequiredAuth>
                  <Supplier/>
                  </RequiredAuth>
+                }
+                />
+            </Route>
+
+
+            <Route path="listProduct">
+            <Route index
+                element={
+                <RequiredAuth>
+                 <ListProducts/>
+                </RequiredAuth>
                 }
                 />
             </Route>

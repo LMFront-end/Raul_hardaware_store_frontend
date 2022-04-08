@@ -11,7 +11,7 @@ const List = () => {
   const rows = [
     {
       id: 1143155,
-      product: "Acer Nitro 5",
+      product: "esmeril-dewalt",
       img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
       customer: "John Smith",
       date: "1 March",
@@ -21,7 +21,7 @@ const List = () => {
     },
     {
       id: 2235235,
-      product: "Playstation 5",
+      product: "juego-4-alicate",
       img: "https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_UY327_FMwebp_QL65_.jpg",
       customer: "Michael Doe",
       date: "1 March",
@@ -31,7 +31,7 @@ const List = () => {
     },
     {
       id: 2342353,
-      product: "Redragon S101",
+      product: "juego-de-copas-85-piezas-de-14-a-38",
       img: "https://m.media-amazon.com/images/I/71kr3WAj1FL._AC_UY327_FMwebp_QL65_.jpg",
       customer: "John Smith",
       date: "1 March",
@@ -41,7 +41,7 @@ const List = () => {
     },
     {
       id: 2357741,
-      product: "Razer Blade 15",
+      product: "martillo-con-mango-de-madera-cabeza-conica",
       img: "https://m.media-amazon.com/images/I/71wF7YDIQkL._AC_UY327_FMwebp_QL65_.jpg",
       customer: "Jane Smith",
       date: "1 March",
@@ -51,7 +51,7 @@ const List = () => {
     },
     {
       id: 2342355,
-      product: "ASUS ROG Strix",
+      product: "pistola-de-soldar-2-temperaturas\"",
       img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
       customer: "Harold Carol",
       date: "1 March",
