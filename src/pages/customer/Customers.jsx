@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react'
+
 import { CustomerTable } from '../../components/tableCustomer/CustomerTable'
 import { NavbarPages } from '../../components/navbarPages/NavbarPages'
 

@@ -16,6 +16,7 @@ import { Map } from "./pages/Map/Map";
 import {BillContext} from "./context/bill/BillContext";
 import {URL_API} from "./utils/data";
 import {GenerateBill} from "./pages/generateBill/GenerateBill";
+import {Supplier} from "./pages/supplier/Supplier";
 
 
 
@@ -82,24 +83,35 @@ const App = () => {
             </Route>
 
             <Route path="bill">
-              <Route index
-                 element={
-                     <RequiredAuth>
-                         <Bill />
-                     </RequiredAuth>
-              }
-              />
+            <Route index
+                element={
+             <RequiredAuth>
+                 <Bill />
+             </RequiredAuth>
+                }
+            />
+
             </Route>
 
-              <Route path="generateBill">
-                  <Route index
-                         element={
-                             <RequiredAuth>
-                                 <GenerateBill />
-                             </RequiredAuth>
-                         }
-                  />
-              </Route>
+            <Route path="generateBill">
+            <Route index
+                element={
+                <RequiredAuth>
+                 <GenerateBill />
+                </RequiredAuth>
+                }
+            />
+            </Route>
+
+            <Route path="suppliers">
+            <Route index
+                element={
+                <RequiredAuth>
+                 <Supplier/>
+                 </RequiredAuth>
+                }
+                />
+            </Route>
 
             <Route path="map">
             <Route index

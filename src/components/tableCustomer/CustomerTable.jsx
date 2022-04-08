@@ -4,7 +4,6 @@ import GetAppIcon from '@mui/icons-material/GetApp';
 import {URL_API} from "../../utils/data";
 import { useNavigate } from "react-router-dom";
 import {BillContext} from "../../context/bill/BillContext";
-import data from "bootstrap/js/src/dom/data";
 
 const CustomerTable = () => {
 
