@@ -6,12 +6,15 @@ export const BillContextProvider = ({children}) =>{
 
     const [customer, setCustomer] = useState({})
     const [products, setProducts] = useState({list: []})
+    const [cart, setCart] = useState({list:[]})
 
 
     const addProduct = (item) => {
+        let outList = products.list
+        outList.push(item)
         setProducts({
             ...products,
-            list: products.push(item)
+            list: outList
         })
     }
 
@@ -22,9 +25,15 @@ export const BillContextProvider = ({children}) =>{
         })
     }
 
+    const addToCart = (item) => {
+        let outList = cart.list
+        outList.push(item)
+        setCart({...cart, list: outList})
+    }
 
 
-    return <BillContext.Provider value={{customer, setCustomer, products, addProduct, fillProducts}}>
+
+    return <BillContext.Provider value={{customer, setCustomer, products, addProduct, fillProducts, cart, addToCart}}>
         {children}
     </BillContext.Provider>
 

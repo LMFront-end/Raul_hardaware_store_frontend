@@ -15,6 +15,7 @@ import {Bill} from './pages/bill/Bill'
 import { Map } from "./pages/Map/Map";
 import {BillContext} from "./context/bill/BillContext";
 import {URL_API} from "./utils/data";
+import {GenerateBill} from "./pages/generateBill/GenerateBill";
 
 
 
@@ -37,8 +38,6 @@ const App = () => {
   const RequiredAuth = ({children}) => {
     return currentUser ? (children) : <Navigate to="/login"/>
   }
-
-  console.log(currentUser)
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
@@ -91,6 +90,16 @@ const App = () => {
               }
               />
             </Route>
+
+              <Route path="generateBill">
+                  <Route index
+                         element={
+                             <RequiredAuth>
+                                 <GenerateBill />
+                             </RequiredAuth>
+                         }
+                  />
+              </Route>
 
             <Route path="map">
             <Route index

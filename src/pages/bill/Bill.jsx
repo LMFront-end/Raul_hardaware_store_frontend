@@ -4,12 +4,11 @@ import {URL_API} from "../../utils/data";
 import {BillContext} from "../../context/bill/BillContext";
 import {MediaCard} from "../../components/mediaCard/MediaCard";
 import styles from "./Bill.module.css";
+import {Link} from "react-router-dom";
 
 const Bill = () => {
 
     const {customer, products} = useContext(BillContext);
-
-    console.log(products);
 
 
     useEffect(() => {

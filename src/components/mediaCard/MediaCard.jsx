@@ -4,14 +4,13 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import {useState} from "react";
+import {Link} from "react-router-dom";
+
 
 const MediaCard = ({product}) => {
 
-    const [amount, setAmount] = useState(0);
-
     return (
-        <Card sx={{ maxWidth: 350 }} className="container_card">
+        <Card sx={{ maxWidth: 500 }} className="container_card">
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                     {product.name}
@@ -24,15 +23,12 @@ const MediaCard = ({product}) => {
                 </Typography>
             </CardContent>
             <CardActions>
-
-                <Button size="small" onClick={() => amount > 0? setAmount(amount-1) : null } className="btn_card_minus">
-                    <i className="fa-solid fa-angles-left" />
-                </Button>
-                <input type={"text"} disabled={true} value={amount} className="input_count"/>
-                <Button size="small" onClick={() => amount < product.stock ? setAmount(amount + 1) : null } className="btn_card_plus">
-
-                    <i className="fa-solid fa-angles-right" />
-                </Button>
+            <button className="btn btn-outline-dark px-1 py-2" >
+                Add to cart <i className="fa fa-shopping-cart me-1" />
+            </button>
+                <Link to="/generateBill" className="btn btn-outline-dark ms-2 px-3 py-2">
+                    Go to Bill <i className="fa fa-shopping-cart me-1" />
+                </Link>
 
             </CardActions>
         </Card>
