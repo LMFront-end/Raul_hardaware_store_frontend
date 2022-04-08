@@ -4,6 +4,7 @@ import GetAppIcon from '@mui/icons-material/GetApp';
 import {URL_API} from "../../utils/data";
 import { useNavigate } from "react-router-dom";
 import {BillContext} from "../../context/bill/BillContext";
+import data from "bootstrap/js/src/dom/data";
 
 const CustomerTable = () => {
 
@@ -71,6 +72,11 @@ const CustomerTable = () => {
       columns={columns} 
       data={tableData.list}
 
+      onRowClick={(e, rowData) =>{
+        setCustomer(rowData)
+        navigate("/bill")
+      }}
+
       editable={{
         onRowAdd: (newRow) => new Promise((resolve, reject) => {
           fetch(URL_API + "/customers/create", {
@@ -93,7 +99,7 @@ const CustomerTable = () => {
                 let updateData = tableData.list.filter(value => value.id !== selectRow.id)
                 setTableData({...tableData, list: updateData})})
           setTimeout(() => resolve(), 1000)
-        })
+        }),
       }}
       
       actions ={[
@@ -125,14 +131,15 @@ const CustomerTable = () => {
         exportFileName: "bill table",
         addRowPosition: "first",
         actionsColumnIndex: -1,
-        selection: true,
+        selection: false,
         showSelectAllCheckbox: false,
         showTextRowsSelected: false,
         grouping:true,
         columnsButton: true,
         selectionProps: rowData=>({
           disabled: false,
-          color: "primary"
+          color: "primary",
+
         })
       }}
       

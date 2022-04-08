@@ -26,12 +26,12 @@ const MediaCard = ({product}) => {
             <CardActions>
 
                 <Button size="small" onClick={() => amount > 0? setAmount(amount-1) : null } className="btn_card_minus">
-                    <i className="fa-solid fa-angles-left"></i>
+                    <i className="fa-solid fa-angles-left" />
                 </Button>
                 <input type={"text"} disabled={true} value={amount} className="input_count"/>
                 <Button size="small" onClick={() => amount < product.stock ? setAmount(amount + 1) : null } className="btn_card_plus">
 
-                    <i className="fa-solid fa-angles-right"></i>
+                    <i className="fa-solid fa-angles-right" />
                 </Button>
 
             </CardActions>
