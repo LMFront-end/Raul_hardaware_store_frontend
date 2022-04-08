@@ -1,3 +1,3 @@
-const URL_API = 'http://localhost:8080/api';
+const URL_API = 'https://raulharwarestore.herokuapp.com/api';
 
 export { URL_API };
