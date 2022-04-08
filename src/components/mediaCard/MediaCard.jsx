@@ -2,25 +2,37 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import {useState} from "react";
 
-const MediaCard = () => {
+const MediaCard = ({product}) => {
+
+    const [amount, setAmount] = useState(0);
+
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 350 }} className="container_card">
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    {product.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
+                    {product.description}
+                </Typography>
+                <Typography variant="body2" color="text.secondary" className="price_card">
+                    ${product.price}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
+
+                <Button size="small" onClick={() => amount < product.stock ? setAmount(amount + 1) : null } className="btn_card_plus">
+                    <i className="fa-solid fa-angles-left"></i>
+                </Button>
+                <input type={"text"} disabled={true} value={amount} className="input_count"/>
+                <Button size="small" onClick={() => amount > 0? setAmount(amount-1) : null } className="btn_card_minus">
+                    <i className="fa-solid fa-angles-right"></i>
+                </Button>
+
             </CardActions>
         </Card>
     );

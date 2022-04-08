@@ -256,3 +256,40 @@
     height:794px;
     width:780px;
 }
+
+/* Media card*/
+
+.input_count{
+    width: 30px;
+    text-align: center;
+}
+
+.container_card{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin: 10px;
+    box-shadow: 2px 2px 1px lightgray;
+    border: 1px solid #f3f3f3;
+}
+
+.container_card:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.price_card{
+    background-color: #33dcff;
+    color: #ffffff;
+    width: 40px;
+    align-items: flex-end;
+}
+
+.btn_card_plus{
+    margin-left: 0px;
+}
+
+.btn_card_minus{
+    margin-left: 90px;
+    outline: none;
+}
