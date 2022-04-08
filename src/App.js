@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import {useContext, useEffect} from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import './App.css';
 import "./style/dark.scss";
@@ -11,7 +11,10 @@ import { Login } from "./pages/login/Login"
 import {HardwareStore} from "./pages/hardwareStore/HardwareStore";
 import { Customers } from './pages/customer/Customers'
 import { NewProducts } from "./pages/newProducts/NewProducts";
+import {Bill} from './pages/bill/Bill'
 import { Map } from "./pages/Map/Map";
+import {BillContext} from "./context/bill/BillContext";
+import {URL_API} from "./utils/data";
 
 
 
@@ -19,6 +22,16 @@ const App = () => {
 
   const { darkMode } = useContext(DarkModeContext);
   const {currentUser} = useContext(AuthContext)
+
+    const {fillProducts} = useContext(BillContext);
+
+    useEffect(() => {
+        fetch(URL_API + "/products", {
+            method: "GET"
+        })
+            .then(response => response.json()
+                .then((list) => fillProducts(list)))
+    }, [])
 
 
   const RequiredAuth = ({children}) => {
@@ -66,6 +79,16 @@ const App = () => {
                     <NewProducts />
                   </RequiredAuth>
                 }
+              />
+            </Route>
+
+            <Route path="bill">
+              <Route index
+                 element={
+                     <RequiredAuth>
+                         <Bill />
+                     </RequiredAuth>
+              }
               />
             </Route>
 

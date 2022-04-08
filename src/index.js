@@ -6,12 +6,15 @@ import 'mdbreact/dist/css/mdb.css';
 import {App} from "./App";
 import { AuthContextProvider } from "./context/AuthContext";
 import { DarkModeContextProvider } from "./context/darkModeContext";
+import { BillContextProvider } from "./context/bill/BillContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <DarkModeContextProvider>
       <AuthContextProvider>
-      <App />
+        <BillContextProvider>
+          <App />
+        </BillContextProvider>
       </AuthContextProvider>
     </DarkModeContextProvider>
   </React.StrictMode>,

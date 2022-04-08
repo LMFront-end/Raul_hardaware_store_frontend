@@ -1,32 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import MaterialTable from 'material-table';
 import GetAppIcon from '@mui/icons-material/GetApp';
+import {URL_API} from "../../utils/data";
+import { useNavigate } from "react-router-dom";
+import {BillContext} from "../../context/bill/BillContext";
 
 const CustomerTable = () => {
 
-  const [tableData, setTableData] = useState([
-    {
-      id: "1", name: "Lina", email: "holamundo@gmail.com", age: 23, "gender": "F", city: "Calarca", phone: "1122334455", identity: "123654"
-    },
-    {
-      id: "2", name: "Juan", email: "holamundo@gmail.com", age: 23, "gender": "M", city: "Calarca", phone: "1122334455", identity: "123654"
-    },
-    {
-      id: "3", name: "Santiago", email: "holamundo@gmail.com", age: 23, "gender": "M", city: "Calarca", phone: "1122334455", identity: "123654"
-    },
-    {
-      id: "4", name: "Pedro", email: "holamundo@gmail.com", age: 23, "gender": "M", city: "Calarca", phone: "1122334455", identity: "123654"
-    },
-    {
-      id: "5", name: "Teo",  email: "holamundo@gmail.com", age: 23, "gender": "M", city: "Calarca", phone: "1122334455", identity: "123654"
-    },
-    {
-      id: "6", name: "Teo",  email: "holamundo@gmail.com", age: 23, "gender": "M", city: "Calarca", phone: "1122334455", identity: "123654"
-    },
-    {
-      id: "7", name: "Juan",  email: "holamundo@gmail.com", age: 23, "gender": "M", city: "Calarca", phone: "1122334455", identity: "123654"
-    }
-  ]);
+  const {setCustomer} = useContext(BillContext)
+  const [tableData, setTableData] = useState({list:[]});
+  const navigate = useNavigate();
 
   const columns =  [
 
@@ -53,12 +36,6 @@ const CustomerTable = () => {
       filterPlaceholder: "Filter by age"
     },
     {
-      title: "Gender",
-      field: "gender",
-      lookup:{M: "Male", F: "Female"},
-
-    },
-    {
       title: "City",
       field: "city",
       filterPlaceholder: "Filter by city"
@@ -66,17 +43,25 @@ const CustomerTable = () => {
     {
 
       title: "Phone Number",
-      field: "phone",
+      field: "phoneNumber",
       align: "right",
       filterPlaceholder: "Filter by number"
     },
     {
       title: "Identity Document",
-      field: "identity",
+      field: "identityDocument",
       filterPlaceholder: "Filter by identity"
 
     }
   ]
+
+  useEffect(() =>{
+    fetch(URL_API + "/customers", {
+      method: "GET"
+    })
+        .then(response => response.json()
+            .then((list) => setTableData({...tableData, list: list})))
+  },[])
 
 
   return (
@@ -84,41 +69,41 @@ const CustomerTable = () => {
       <MaterialTable 
       title="Customer information" 
       columns={columns} 
-      data={tableData}
+      data={tableData.list}
 
       editable={{
         onRowAdd: (newRow) => new Promise((resolve, reject) => {
-          setTableData([...tableData, newRow])
-          
-          setTimeout(() => resolve(), 500)
-
-        }),
-
-        onRowUpdate:(newRow, oldRow) => new Promise((resolve, reject) => {
-
-          const updateData = [...tableData]
-          updateData[oldRow.tableData.id] = newRow
-          setTableData(updateData)
-
+          fetch(URL_API + "/customers/create", {
+            method: "POST",
+            body: JSON.stringify(newRow),
+            headers: {"Content-Type": "application/json"}
+          }).then(response => response.json()
+              .then(value => {
+                let result = tableData.push(value)
+                setTableData({...tableData, list:result})}))
           setTimeout(() => resolve(), 500)
 
         }),
 
         onRowDelete: (selectRow) => new Promise((resolve, reject) => {
-
-          const updateData = [...tableData]
-          updateData.splice(selectRow.tableData.id, 1)
-          setTableData(updateData)
-
+          console.log(URL_API + "/customers/delete/" + selectRow.id.toString())
+          fetch(URL_API + "/customers/delete/" + selectRow.id.toString(),
+              { method: "DELETE" })
+              .then(response => {
+                let updateData = tableData.list.filter(value => value.id !== selectRow.id)
+                setTableData({...tableData, list: updateData})})
           setTimeout(() => resolve(), 1000)
-
         })
       }}
       
       actions ={[
         {icon:() => <GetAppIcon />,
-        tooltip: "Click me",
-        onclick: (data) => console.log(data),
+        tooltip: "Sell to customer",
+        onClick: (e, data) => {
+
+          setCustomer(data[0])
+          navigate("/bill")
+        },
         //isFreeAction: true
       
       }
@@ -137,7 +122,7 @@ const CustomerTable = () => {
         showFirstLastPageButtons: true,
         exportButton: true,
         exportAllData: true,
-        exportFileName: "customer table",
+        exportFileName: "bill table",
         addRowPosition: "first",
         actionsColumnIndex: -1,
         selection: true,

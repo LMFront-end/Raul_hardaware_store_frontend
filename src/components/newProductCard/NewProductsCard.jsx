@@ -4,7 +4,6 @@ import styles from './NewProductsCard.module.css'
 const NewProductsCard = (props) => {
   return (
     <>
-      <>
     <div className={styles.hotelCard} key={props.slug}>
           <img
             src={props.img}
@@ -35,9 +34,8 @@ const NewProductsCard = (props) => {
 
           <button className={styles.hotelCard__btn}>More...</button>
         </div>
-    
     </>
-    </>
+
   )
 }
 
